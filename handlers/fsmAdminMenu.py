@@ -3,6 +3,7 @@ from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters import Text
 from aiogram.dispatcher.filters.state import State, StatesGroup
 from config import bot, ADMIN
+from database import bot_db
 
 
 class FSMAdmin(StatesGroup):
@@ -55,6 +56,7 @@ async def load_cost(message: types.Message, state: FSMContext):
                                      caption=f"Name: {data['name']}\n"
                                              f"Description: {data['description']}\n"
                                              f"Price: {data['price']}$")
+            await bot_db.sql_command_insert(state)
             await state.finish()
             await message.answer("Спасибо за новое блюдо!!!")
     except:
