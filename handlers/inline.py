@@ -1,5 +1,5 @@
 import hashlib
-from pprint import pprint
+#from pprint import pprint
 
 from aiogram import types, Dispatcher
 from youtube_search import YoutubeSearch as wiki
@@ -10,7 +10,7 @@ def finder(text):
     return results
 
 
-pprint(finder("slivki"))
+#pprint(finder("slivki"))
 
 
 
