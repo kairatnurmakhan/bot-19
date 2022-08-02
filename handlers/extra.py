@@ -14,7 +14,7 @@ async def echo(message: types.Message):
     if message.text.startswith('!pin'):
         await bot.pin_chat_message(message.chat.id, message.message_id)
 
-    if message.from_user.id != 'game':
+    if message.text == 'game':
         a = ('🏀', '⚽', '🎲', '🎯', '🎳', '🎰')
         await bot.send_dice(message.chat.id, emoji=random.choice(a))
         #bot_dice = a.dice.value
