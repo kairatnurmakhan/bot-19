@@ -10,7 +10,7 @@ def finder(text):
     return results
 
 
-pprint(finder("slivki"))
+#pprint(finder("slivki"))
 
 
 
