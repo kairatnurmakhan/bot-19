@@ -5,22 +5,22 @@ from aiogram import types, Dispatcher
 from youtube_search import YoutubeSearch as wiki
 
 
-def finder(text):
-    results = wiki(text, max_results=10).to_dict()
-    return results
-
-
-#pprint(finder("slivki"))
+# def finder(text):
+#     results = wiki(text, max_results=10).to_dict()
+#     return results
+#
+#
+# pprint(finder("slivki"))
 
 
 
 async def inline_wiki_handler(query: types.InlineQuery):
     text = query.query or "echo"
-    link = f"https://ru.wikipedia.org/wiki{text}"
+    link = f"https://ru.wikipedia.org/wiki/{text}"
     result_id: str = hashlib.md5(text.encode()).hexdigest()
     articles = [types.InlineQueryResultArticle(
         id=result_id,
-        title="Wikipedia: ",
+        title="Wiki: ",
         url=link,
         input_message_content=types.InputMessageContent(
             message_text=link
