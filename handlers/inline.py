@@ -2,11 +2,11 @@ import hashlib
 from pprint import pprint
 
 from aiogram import types, Dispatcher
-from youtube_search import YoutubeSearch as YT
+from youtube_search import YoutubeSearch as wiki
 
 
 def finder(text):
-    results = YT(text, max_results=10).to_dict()
+    results = wiki(text, max_results=10).to_dict()
     return results
 
 
@@ -16,7 +16,7 @@ pprint(finder("slivki"))
 
 async def inline_wiki_handler(query: types.InlineQuery):
     text = query.query or "echo"
-    link = f"https://www.wikipedia.org/search?q={text}"
+    link = f"https://ru.wikipedia.org/wiki/{text}"
     result_id: str = hashlib.md5(text.encode()).hexdigest()
     articles = [types.InlineQueryResultArticle(
         id=result_id,
