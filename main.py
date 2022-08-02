@@ -3,7 +3,7 @@ from config import dp
 import logging
 import asyncio
 
-from handlers import client, callback, extra, callback, admin, fsmAdminMenu, inline, notification
+from handlers import client, extra, callback, admin, fsmAdminMenu, inline, notification
 from database.bot_db import sql_create
 
 
