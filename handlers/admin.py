@@ -1,5 +1,6 @@
 from aiogram import types, Dispatcher
 from config import ADMIN
+#from database.bot_db import sql_commands_get_all_id
 
 
 async def ban(message: types.Message):
