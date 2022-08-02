@@ -16,7 +16,7 @@ def finder(text):
 
 async def inline_wiki_handler(query: types.InlineQuery):
     text = query.query or "echo"
-    link = f"https://ru.wikipedia.org/wiki{text}"
+    link = f"https://ru.wikipedia.org/wiki/{text}"
     result_id: str = hashlib.md5(text.encode()).hexdigest()
     articles = [types.InlineQueryResultArticle(
         id=result_id,
