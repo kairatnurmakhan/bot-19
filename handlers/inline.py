@@ -5,12 +5,12 @@ from aiogram import types, Dispatcher
 from youtube_search import YoutubeSearch as wiki
 
 
-# def finder(text):
-#     results = wiki(text, max_results=10).to_dict()
-#     return results
-#
-#
-# pprint(finder("slivki"))
+def finder(text):
+    results = wiki(text, max_results=10).to_dict()
+    return results
+
+
+pprint(finder("slivki"))
 
 
 
